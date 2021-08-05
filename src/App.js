@@ -1,7 +1,13 @@
+import Navbar from "./components/navbar";
+import Home from "./components/home";
+
 function App() {
   return (
-    <div>
-      <h1>Notes</h1>
+    <div className="App">
+      <Navbar />
+      <div className="content">
+        <Home />
+      </div>
     </div>
   );
 }
