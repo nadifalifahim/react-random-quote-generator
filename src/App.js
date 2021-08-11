@@ -1,15 +1,11 @@
-import Navbar from "./components/navbar";
-import Home from "./components/home";
+import QuoteBox from "./components/quoteBox";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <Navbar />
-      <div className="content">
-        <Home />
-      </div>
+      <QuoteBox />
     </div>
   );
-}
+};
 
 export default App;

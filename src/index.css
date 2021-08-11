@@ -1,34 +1,118 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-
 * {
+  padding: 0;
   margin: 0;
-  font-family: "Quicksand";
-  color: #333;
 }
-.navbar {
-  padding: 20px;
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap");
+
+:root {
+  --primary-color: hsl(352, 100%, 65%);
+  --secondary-color: white;
+  --duration: 1s;
+}
+
+body {
+  background: var(--primary-color);
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  transition: var(--duration) ease;
+}
+
+button {
+  background-color: var(--primary-color);
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  color: white;
+  transition: var(--duration) ease;
+}
+
+.App {
+  height: 100vh;
   display: flex;
   align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
+  justify-content: center;
 }
-.navbar h1 {
-  color: #f1356d;
+
+@keyframes quoteDisappear {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
-.navbar .links {
-  margin-left: auto;
+
+.quote-box {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  width: 500px;
+  padding: 2.5rem 4rem;
+  border-radius: 5px;
+  box-shadow: 0px 10px 40px 0px #00000025;
 }
-.navbar a {
-  margin-left: 16px;
+
+.text {
+  text-align: center;
+  font-weight: 500;
+  position: relative;
+}
+
+.text i {
+  padding: 0 15px;
+  font-size: 0.8em;
+}
+
+.text::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 4rem;
+}
+
+.author {
+  text-align: end;
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+
+.button {
+  transition: 0.1s ease-in all;
+}
+
+.button:hover {
+  cursor: pointer;
+  filter: brightness(110%);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social-buttons {
+  display: flex;
+}
+
+.tweet-quote {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  outline: none;
+  border: none;
   text-decoration: none;
-  padding: 6px;
+  margin-right: 10px;
 }
-.navbar a:hover {
-  color: #f1356d;
-}
-.content {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
+
+.animateTexts {
+  animation: quoteDisappear var(--duration) infinite;
 }
